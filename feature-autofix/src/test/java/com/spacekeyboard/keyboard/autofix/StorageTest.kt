@@ -52,7 +52,7 @@ class StorageTest {
     @Test
     fun settingsDefaultToOnAndBalanced() {
         val store = AutoFixPrefsStore(FakePreferences().prefs)
-        assertEquals(AutoFixConfig(), store.config())
+        assertEquals(AutoFixConfig(live = false), store.config())
     }
 
     @Test
