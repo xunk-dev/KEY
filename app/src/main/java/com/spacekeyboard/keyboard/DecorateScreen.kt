@@ -55,7 +55,7 @@ fun DecorateScreen(controller: DecorController, onBack: () -> Unit) {
                 BackLink(onBack)
             }
             item { SpaceText(stringResource(R.string.decorate_title), SpaceTheme.typography.display) }
-            item { SampleField(sample) { sample = it } }
+            item { DecorateSampleField(sample) { sample = it } }
             item { ChipGrid(listOf(Language.EN, Language.AR), state.language, ::languageLabel, controller::setLanguage) }
             item { ActiveStatus(state.active, controller::clearActive) }
             item {
@@ -77,7 +77,7 @@ private fun languageLabel(language: Language): Int =
     if (language == Language.EN) R.string.decorate_lang_en else R.string.decorate_lang_ar
 
 @Composable
-private fun SampleField(value: String, onChange: (String) -> Unit) {
+private fun DecorateSampleField(value: String, onChange: (String) -> Unit) {
     ToolField { SampleInput(value, onChange) }
 }
 

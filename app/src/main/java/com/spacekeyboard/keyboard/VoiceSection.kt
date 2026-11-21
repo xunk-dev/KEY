@@ -30,7 +30,8 @@ private val dialects = listOf(
 
 @Composable
 fun VoiceSection() {
-    val prefs = remember { VoicePrefs(LocalContext.current) }
+    val context = LocalContext.current
+    val prefs = remember { VoicePrefs(context) }
     var selected by remember { mutableStateOf(prefs.arabicTag) }
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         SpaceText(stringResource(R.string.section_voice), SpaceTheme.typography.title)
