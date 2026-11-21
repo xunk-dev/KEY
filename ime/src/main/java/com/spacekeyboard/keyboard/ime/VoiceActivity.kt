@@ -15,7 +15,7 @@ class VoiceActivity : Activity() {
         val request = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
             .putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
             .putExtra(RecognizerIntent.EXTRA_LANGUAGE, tag)
-            .putExtra(RecognizerIntent.EXTRA_ADDITIONAL_LANGUAGES, VoiceLanguage.extraLanguages(tag).toTypedArray())
+            .putExtra(EXTRA_ADDITIONAL_LANGUAGES, VoiceLanguage.extraLanguages(tag).toTypedArray())
             .putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1)
         try {
             startActivityForResult(request, REQUEST)
@@ -40,5 +40,6 @@ class VoiceActivity : Activity() {
 
     private companion object {
         const val REQUEST = 7
+        const val EXTRA_ADDITIONAL_LANGUAGES = "android.speech.extra.EXTRA_ADDITIONAL_LANGUAGES"
     }
 }

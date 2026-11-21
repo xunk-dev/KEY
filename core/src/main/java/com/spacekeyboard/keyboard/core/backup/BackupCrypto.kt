@@ -66,7 +66,7 @@ object BackupCrypto {
         val valid = kdf in setOf(SHA256, SHA1) && iterations in 1..MAX_ITERATIONS &&
             salt != null && salt.size == SALT_BYTES && iv != null && iv.size == IV_BYTES && data != null
         if (!valid) return Opened.Invalid
-        return open(password, kdf, iterations, salt!!, iv!!, data!!)
+        return open(password, kdf, iterations, salt, iv, data)
     }
 
     private fun open(password: CharArray, kdf: String, iterations: Int, salt: ByteArray, iv: ByteArray, data: ByteArray): Opened {
