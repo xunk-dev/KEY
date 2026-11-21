@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="decor_keys">أبج</string>
+    <string name="decor_type">اكتب</string>
+    <string name="decor_typing_off">إيقاف الكتابة</string>
+    <string name="decor_warning">اضغط على نمط لتطبيقه على نصك. قارئات الشاشة تقرأ الحروف المزخرفة بشكل سيئ، وقد تعرض بعض التطبيقات مربعات فارغة.</string>
+    <string name="decor_apply_desc">تطبيق نمط زخرفة على: %1$s</string>
+    <string name="decor_favorite_desc">نمط مفضل</string>
+    <string name="decor_screen_reader_warning">قد تقرأ قارئات الشاشة النص المزخرف بشكل سيئ.</string>
+</resources>

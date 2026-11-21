@@ -1,0 +1,54 @@
+{
+  "id": "ar",
+  "rows": [
+    [
+      {"label": "ض", "hold": ["1", "١"]},
+      {"label": "ص", "hold": ["2", "٢"]},
+      {"label": "ث", "hold": ["3", "٣"]},
+      {"label": "ق", "hold": ["4", "٤"]},
+      {"label": "ف", "hold": ["5", "٥", "ڤ"]},
+      {"label": "غ", "hold": ["6", "٦"]},
+      {"label": "ع", "hold": ["7", "٧"]},
+      {"label": "ه", "hold": ["8", "٨", "ھ", "ہ"]},
+      {"label": "خ", "hold": ["9", "٩"]},
+      {"label": "ح", "hold": ["0", "٠"]},
+      {"label": "ج", "hold": ["چ"]},
+      "د"
+    ],
+    [
+      "ش",
+      "س",
+      {"label": "ي", "hold": ["ی"]},
+      {"label": "ب", "hold": ["پ"]},
+      {"label": "ل", "hold": ["لأ", "لإ", "لآ"]},
+      {"label": "ا", "hold": ["أ", "إ", "آ", "ٱ"]},
+      "ت",
+      "ن",
+      "م",
+      {"label": "ك", "hold": ["گ", "ک"]},
+      "ط",
+      "ذ"
+    ],
+    [
+      {"label": "ئ", "weight": 1.15},
+      {"label": "ء", "weight": 1.15},
+      {"label": "ؤ", "weight": 1.15},
+      {"label": "ر", "weight": 1.15},
+      {"label": "ى", "weight": 1.15},
+      {"label": "ة", "weight": 1.15},
+      {"label": "و", "hold": ["ۆ"], "weight": 1.15},
+      {"label": "ز", "hold": ["ژ"], "weight": 1.15},
+      {"label": "ظ", "hold": ["ـَ", "ـُ", "ـِ", "ـً", "ـٌ", "ـٍ", "ـّ", "ـْ", "ـٰ"], "weight": 1.15},
+      {"id": "delete", "action": "DELETE", "label": "⌫", "weight": 1.65}
+    ],
+    [
+      {"id": "lang", "action": "LANGUAGE", "label": "EN", "weight": 1.3},
+      {"id": "num", "action": "NUMBERS", "label": "123", "weight": 1.3},
+      {"label": "،", "hold": ["؟", "؛", "!", ":", "-", "/", "ـ"]},
+      {"label": "لا"},
+      {"id": "space", "action": "SPACE", "weight": 3.9},
+      {"label": ".", "hold": ["؟", "!", "…", ":", "؛"]},
+      {"id": "enter", "action": "ENTER", "label": "⏎", "weight": 2.5}
+    ]
+  ]
+}

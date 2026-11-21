@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="theme_nebula">Nebula</string>
+    <string name="theme_galaxy">Galaxy</string>
+    <string name="theme_blackhole">Black hole</string>
+    <string name="theme_aurora">Aurora</string>
+    <string name="theme_eclipse">Eclipse</string>
+    <string name="theme_neon">Dark neon</string>
+    <string name="theme_fog">Mystic fog</string>
+    <string name="theme_bloodmoon">Blood moon</string>
+    <string name="theme_icy">Icy planet</string>
+    <string name="theme_gold">Cosmic gold</string>
+    <string name="theme_daylight">Daylight</string>
+    <string name="theme_paper">Paper</string>
+    <string name="mode_normal">Normal</string>
+    <string name="mode_one_right">One hand (right)</string>
+    <string name="mode_one_left">One hand (left)</string>
+    <string name="mode_split">Split</string>
+    <string name="font_plex">IBM Plex</string>
+    <string name="font_sans">System sans</string>
+    <string name="font_serif">Serif</string>
+    <string name="font_mono">Monospace</string>
+    <string name="font_cursive">Cursive</string>
+    <string name="font_casual">Casual</string>
+    <string name="toolbar_theme">Theme</string>
+    <string name="toolbar_mode">Mode</string>
+    <string name="toolbar_symbols">Symbols</string>
+    <string name="toolbar_emoji">Emoji</string>
+    <string name="toolbar_decorate">Decorate</string>
+    <string name="toolbar_clipboard">Clipboard</string>
+    <string name="toolbar_translate">Translate</string>
+    <string name="toolbar_images">Images</string>
+    <string name="layout_ar">Arabic</string>
+    <string name="layout_en">English</string>
+    <string name="layout_num">Numbers and symbols</string>
+    <string name="layout_fa">Persian</string>
+    <string name="layout_az">Arabizi (Latin to Arabic)</string>
+    <string name="layout_edit">Text editing</string>
+    <string name="toolbar_edit">Edit text</string>
+    <string name="toolbar_incognito">Incognito</string>
+    <string name="toolbar_voice">Voice typing</string>
+    <string name="toolbar_settings">Settings</string>
+</resources>

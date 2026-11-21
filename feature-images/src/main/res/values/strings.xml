@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="images_keys">ABC</string>
+    <string name="images_title">Images</string>
+    <string name="images_add">Add</string>
+    <string name="images_empty">No images yet. Tap Add to choose some from your gallery.</string>
+    <string name="images_empty_filtered">Nothing in this tab yet. GIFs and transparent pictures or animated WebP stickers show up here.</string>
+    <string name="images_filter_all">All</string>
+    <string name="images_filter_gif">GIF</string>
+    <string name="images_filter_stickers">Stickers</string>
+    <string name="images_copied">This app does not take images from the keyboard. The image was copied: paste it in the message.</string>
+    <string name="images_added">Added %1$d</string>
+    <string name="images_added_some_failed">Added %1$d, could not add %2$d</string>
+    <string name="images_failed">Could not add the images</string>
+    <string name="images_full">Image limit reached (%1$d). Delete some to add more.</string>
+    <string name="images_label">Saved image</string>
+    <string name="images_label_gif">Saved GIF</string>
+    <string name="images_label_sticker">Saved sticker</string>
+    <string name="images_item_desc">%1$s, %2$d of %3$d</string>
+</resources>

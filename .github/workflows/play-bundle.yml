@@ -1,0 +1,96 @@
+name: Play Bundle
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag name e.g. v0.1.0"
+        required: true
+        default: "v0.1.0"
+      status:
+        description: "Release status. Use draft until the app has a published release"
+        type: choice
+        options: [draft, completed]
+        default: draft
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: release-signing
+    permissions:
+      contents: read
+    env:
+      HAS_KEYSTORE_SECRET: ${{ secrets.KEYSTORE_BASE64 != '' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ format('refs/tags/{0}', github.event.inputs.tag) }}
+      - uses: ./.github/actions/setup-build
+      - uses: ./.github/actions/generate-data
+      - name: Fetch emoji data and font
+        run: |
+          python3 -m unittest discover -s tools/data/emoji -p "test_*.py"
+          python3 tools/data/emoji/fetch_emoji.py feature-emoji/src/main/assets/emoji
+          python3 scripts/check-emoji-data.py
+      - name: Decode keystore
+        if: env.HAS_KEYSTORE_SECRET == 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 -d > app/release.keystore
+          echo "HAS_KEYSTORE=true" >> "$GITHUB_ENV"
+      - name: Check lines, comments, binaries and functions
+        run: |
+          bash scripts/check-lines.sh
+          bash scripts/check-comments.sh
+          bash scripts/check-binaries.sh
+          bash scripts/check-function-lines.sh
+          python3 scripts/check-contrast.py
+          python3 scripts/check-themes.py
+          python3 scripts/check-layouts.py
+          python3 scripts/check-strings.py
+          bash scripts/check-fonts.sh
+          python3 scripts/check-manifest-permissions.py
+      - name: Merge manifests
+        run: gradle :app:processDebugMainManifest :app:processReleaseMainManifest --no-daemon
+      - name: Check merged manifest
+        run: bash scripts/check-merged-manifest.sh
+      - name: Lint
+        run: gradle :app:lintRelease --no-daemon
+      - name: Unit tests
+        run: gradle :core:testDebugUnitTest :feature-symbols:testDebugUnitTest :feature-emoji:testDebugUnitTest :feature-decorate:testDebugUnitTest :feature-clipboard:testDebugUnitTest :feature-translate:testDebugUnitTest :feature-autofix:testDebugUnitTest :feature-images:testDebugUnitTest --no-daemon
+      - name: Require signing configuration
+        run: |
+          test "${HAS_KEYSTORE:-}" = "true"
+          test -n "${KEYSTORE_PASSWORD:-}"
+          test -n "${KEY_ALIAS:-}"
+          test -n "${KEY_PASSWORD:-}"
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+      - name: Build signed Play bundle
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          TRANSLATE_URL: ${{ secrets.TRANSLATE_URL }}
+          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        run: gradle :app:bundleRelease --no-daemon
+      - name: Collect bundle
+        run: |
+          mkdir -p dist
+          cp app/build/outputs/bundle/release/*.aab dist/
+          (cd dist && sha256sum *.aab > SHA256SUMS)
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: spacekeyboard-play-bundle
+          path: dist/*
+      - name: Upload bundle to Google Play internal track
+        uses: r0adkll/upload-google-play@v1.1.5
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.spacekeyboard.keyboard
+          releaseFiles: dist/*.aab
+          track: internal
+          status: ${{ github.event.inputs.status }}

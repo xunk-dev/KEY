@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emoji_set_noto">Noto Color Emoji</string>
+    <string name="emoji_set_system">Phone emoji</string>
+    <string name="emoji_keys">ABC</string>
+    <string name="emoji_search">Search emoji</string>
+    <string name="emoji_search_close">Close search</string>
+    <string name="emoji_search_hint">Type with the keyboard below</string>
+    <string name="emoji_search_none">No emoji found</string>
+    <string name="emoji_search_loading">Preparing search…</string>
+    <string name="emoji_delete">Delete</string>
+    <string name="emoji_tone">Skin tone</string>
+    <string name="emoji_loading">Loading emoji…</string>
+    <string name="emoji_failed">Emoji could not be loaded.</string>
+    <string name="emoji_recents">Recent</string>
+    <string name="emoji_recents_empty">Emoji you use appear here.</string>
+    <string name="emoji_clear">Clear</string>
+    <string name="emoji_clear_confirm">Clear all recent emoji?</string>
+    <string name="emoji_clear_yes">Clear all</string>
+    <string name="emoji_clear_no">Keep</string>
+    <string name="emoji_group_smileys">Smileys and emotion</string>
+    <string name="emoji_group_people">People and body</string>
+    <string name="emoji_group_animals">Animals and nature</string>
+    <string name="emoji_group_food">Food and drink</string>
+    <string name="emoji_group_travel">Travel and places</string>
+    <string name="emoji_group_activities">Activities</string>
+    <string name="emoji_group_objects">Objects</string>
+    <string name="emoji_group_symbols">Symbols</string>
+    <string name="emoji_group_flags">Flags</string>
+    <string name="emoji_tone_none">Default</string>
+    <string name="emoji_tone_light">Light</string>
+    <string name="emoji_tone_medium_light">Medium light</string>
+    <string name="emoji_tone_medium">Medium</string>
+    <string name="emoji_tone_medium_dark">Medium dark</string>
+    <string name="emoji_tone_dark">Dark</string>
+</resources>

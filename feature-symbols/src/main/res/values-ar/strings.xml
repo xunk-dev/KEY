@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cat_featured">الأكثر استخداماً</string>
+    <string name="cat_currency">عملات</string>
+    <string name="cat_math">رياضيات</string>
+    <string name="cat_arrows">أسهم</string>
+    <string name="cat_stars">نجوم</string>
+    <string name="cat_hearts">قلوب</string>
+    <string name="cat_shapes">أشكال</string>
+    <string name="cat_marks">علامات</string>
+    <string name="cat_signs">رموز عامة</string>
+    <string name="cat_punctuation">ترقيم</string>
+    <string name="cat_brackets">أقواس</string>
+    <string name="cat_frames">إطارات</string>
+    <string name="cat_greek">يونانية</string>
+    <string name="cat_circled">داخل دوائر</string>
+    <string name="cat_numerals">أرقام</string>
+    <string name="cat_arabic">عربية</string>
+    <string name="cat_games">ألعاب</string>
+    <string name="cat_music">موسيقى</string>
+    <string name="cat_misc">متنوعة</string>
+    <string name="cat_ornaments">زخارف</string>
+    <string name="cat_technical">تقنية</string>
+    <string name="face_classic">كلاسيكية</string>
+    <string name="face_happy">سعيد</string>
+    <string name="face_laugh">ضحك</string>
+    <string name="face_love">حب</string>
+    <string name="face_shy">خجل</string>
+    <string name="face_sad">حزين</string>
+    <string name="face_angry">غضب</string>
+    <string name="face_surprised">مفاجأة</string>
+    <string name="face_sleepy">نعاس</string>
+    <string name="face_cool">رائع</string>
+    <string name="face_evil">شرير</string>
+    <string name="face_confused">حيرة</string>
+    <string name="face_animals">حيوانات</string>
+    <string name="face_actions">حركات</string>
+    <string name="tab_symbols">رموز</string>
+    <string name="tab_faces">وجوه</string>
+    <string name="panel_back">أب</string>
+    <string name="panel_search">بحث</string>
+    <string name="panel_delete">حذف</string>
+    <string name="panel_close_search">إغلاق البحث</string>
+    <string name="panel_search_hint">ابحث بالاسم أو الرمز</string>
+    <string name="panel_search_start">اكتب بلوحة المفاتيح بالأسفل</string>
+    <string name="panel_empty">لا توجد نتائج</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="theme_nebula">سديم</string>
+    <string name="theme_galaxy">مجرّة</string>
+    <string name="theme_blackhole">ثقب أسود</string>
+    <string name="theme_aurora">شفق قطبي</string>
+    <string name="theme_eclipse">كسوف</string>
+    <string name="theme_neon">نيون مظلم</string>
+    <string name="theme_fog">ضباب غامض</string>
+    <string name="theme_bloodmoon">قمر دموي</string>
+    <string name="theme_icy">كوكب جليدي</string>
+    <string name="theme_gold">ذهب كوني</string>
+    <string name="theme_daylight">نهاري</string>
+    <string name="theme_paper">ورقي</string>
+    <string name="mode_normal">عادي</string>
+    <string name="mode_one_right">يد واحدة (يمين)</string>
+    <string name="mode_one_left">يد واحدة (يسار)</string>
+    <string name="mode_split">منقسم</string>
+    <string name="font_plex">IBM Plex</string>
+    <string name="font_sans">خط النظام</string>
+    <string name="font_serif">سيريف</string>
+    <string name="font_mono">أحادي العرض</string>
+    <string name="font_cursive">مخطوط</string>
+    <string name="font_casual">مرح</string>
+    <string name="toolbar_theme">الثيم</string>
+    <string name="toolbar_mode">الوضع</string>
+    <string name="toolbar_symbols">الرموز</string>
+    <string name="toolbar_emoji">إيموجي</string>
+    <string name="toolbar_decorate">زخرفة</string>
+    <string name="toolbar_clipboard">الحافظة</string>
+    <string name="toolbar_translate">ترجمة</string>
+    <string name="toolbar_images">الصور</string>
+    <string name="layout_ar">العربية</string>
+    <string name="layout_en">English</string>
+    <string name="layout_num">الأرقام والرموز</string>
+    <string name="layout_fa">الفارسية</string>
+    <string name="layout_az">عربيزي (لاتيني إلى عربي)</string>
+    <string name="layout_edit">تحرير النص</string>
+    <string name="toolbar_edit">تحرير النص</string>
+    <string name="toolbar_incognito">التخفّي</string>
+    <string name="toolbar_voice">الإملاء الصوتي</string>
+    <string name="toolbar_settings">الإعدادات</string>
+</resources>

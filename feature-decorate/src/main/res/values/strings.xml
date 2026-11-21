@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="decor_keys">ABC</string>
+    <string name="decor_type">Type</string>
+    <string name="decor_typing_off">Stop typing</string>
+    <string name="decor_warning">Tap a style to apply it to your text. Screen readers read decorated letters poorly, and some apps may show empty squares.</string>
+    <string name="decor_apply_desc">Apply a decorative style to: %1$s</string>
+    <string name="decor_favorite_desc">Favorite style</string>
+    <string name="decor_screen_reader_warning">Decorated text may be read poorly by screen readers.</string>
+</resources>

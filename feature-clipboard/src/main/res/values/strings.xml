@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clip_keys">ABC</string>
+    <string name="clip_tab_current">Recent</string>
+    <string name="clip_tab_pinned">Pinned</string>
+    <string name="clip_tab_saved">Saved</string>
+    <string name="clip_pin">Pin</string>
+    <string name="clip_unpin">Unpin</string>
+    <string name="clip_save">Save</string>
+    <string name="clip_delete">Delete</string>
+    <string name="clip_clear">Clear</string>
+    <string name="clip_clear_confirm">Delete all recent copied texts? Pinned and saved texts stay.</string>
+    <string name="clip_yes">Yes</string>
+    <string name="clip_no">No</string>
+    <string name="clip_ok">Done</string>
+    <string name="clip_cancel">Cancel</string>
+    <string name="clip_new_section">+ Section</string>
+    <string name="clip_section_name">Section name</string>
+    <string name="clip_choose_section">Save to which section?</string>
+    <string name="clip_remove_section">Remove from section</string>
+    <string name="clip_no_sections">Create a section first with + Section.</string>
+    <string name="clip_lock_section">Lock</string>
+    <string name="clip_unlock_section">Unlock</string>
+    <string name="clip_unlock">Unlock</string>
+    <string name="clip_locked_hint">This section is locked. Confirm with your fingerprint or screen lock to see its texts.</string>
+    <string name="clip_delete_section">Delete section</string>
+    <string name="clip_delete_section_confirm">Delete this section and all texts inside it?</string>
+    <string name="clip_empty_current">Texts you copy appear here.</string>
+    <string name="clip_empty_pinned">Pin a text to keep it here.</string>
+    <string name="clip_empty_section">This section is empty. Use Save on a text to add it.</string>
+    <string name="clip_off">Clipboard history is off. Turn it on in the app to record what you copy.</string>
+    <string name="clip_need_lock">Set a screen lock or fingerprint on your phone first, then lock the section.</string>
+    <string name="clip_unlock_title">Unlock saved texts</string>
+    <string name="clip_unlock_subtitle">Space Keyboard clipboard</string>
+    <string name="clip_unlock_failed">Could not unlock. Set a screen lock or fingerprint on your phone first.</string>
+</resources>

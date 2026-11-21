@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ime_label">Space Keyboard</string>
+    <string name="subtype_ar">Arabic</string>
+    <string name="subtype_en">English</string>
+    <string name="a11y_space">Space</string>
+    <string name="a11y_delete">Delete</string>
+    <string name="a11y_enter">Enter</string>
+    <string name="a11y_language">Switch language. Long press to switch keyboard</string>
+    <string name="a11y_shift">Shift</string>
+    <string name="a11y_numbers">Numbers and letters</string>
+    <string name="a11y_expand">Expand keyboard</string>
+    <string name="a11y_flip">Move keyboard to the other side</string>
+    <string name="autofix_hint_undo">Backspace to undo</string>
+    <string name="a11y_edit_close">Back to letters</string>
+    <string name="a11y_cursor_left">Cursor left</string>
+    <string name="a11y_cursor_right">Cursor right</string>
+    <string name="a11y_cursor_up">Cursor up</string>
+    <string name="a11y_cursor_down">Cursor down</string>
+    <string name="a11y_word_left">Previous word</string>
+    <string name="a11y_word_right">Next word</string>
+    <string name="a11y_line_start">Start of line</string>
+    <string name="a11y_line_end">End of line</string>
+    <string name="enter_go">Go</string>
+    <string name="enter_search">Search</string>
+    <string name="enter_send">Send</string>
+    <string name="enter_next">Next</string>
+    <string name="enter_done">Done</string>
+    <string name="enter_previous">Back</string>
+    <string name="subtype_fa">Persian</string>
+    <string name="subtype_az">Arabizi</string>
+    <string name="a11y_space_language">Space, %1$s</string>
+    <string name="a11y_undo">Undo</string>
+    <string name="a11y_redo">Redo</string>
+    <string name="suggestion_removed">Removed %1$s from suggestions</string>
+    <string name="suggestion_remove_action">Remove suggestion</string>
+</resources>

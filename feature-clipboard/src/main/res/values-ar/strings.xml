@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clip_keys">أبج</string>
+    <string name="clip_tab_current">الحالية</string>
+    <string name="clip_tab_pinned">المثبتة</string>
+    <string name="clip_tab_saved">المحفوظة</string>
+    <string name="clip_pin">تثبيت</string>
+    <string name="clip_unpin">إلغاء التثبيت</string>
+    <string name="clip_save">حفظ</string>
+    <string name="clip_delete">حذف</string>
+    <string name="clip_clear">مسح</string>
+    <string name="clip_clear_confirm">حذف كل النصوص المنسوخة مؤخراً؟ تبقى النصوص المثبتة والمحفوظة.</string>
+    <string name="clip_yes">نعم</string>
+    <string name="clip_no">لا</string>
+    <string name="clip_ok">تم</string>
+    <string name="clip_cancel">إلغاء</string>
+    <string name="clip_new_section">+ قسم</string>
+    <string name="clip_section_name">اسم القسم</string>
+    <string name="clip_choose_section">حفظ في أي قسم؟</string>
+    <string name="clip_remove_section">إزالة من القسم</string>
+    <string name="clip_no_sections">أنشئ قسماً أولاً بزر + قسم.</string>
+    <string name="clip_lock_section">قفل</string>
+    <string name="clip_unlock_section">فتح القفل</string>
+    <string name="clip_unlock">فتح</string>
+    <string name="clip_locked_hint">هذا القسم مقفل. أكّد ببصمتك أو قفل الشاشة لرؤية نصوصه.</string>
+    <string name="clip_delete_section">حذف القسم</string>
+    <string name="clip_delete_section_confirm">حذف هذا القسم وكل النصوص التي بداخله؟</string>
+    <string name="clip_empty_current">النصوص التي تنسخها تظهر هنا.</string>
+    <string name="clip_empty_pinned">ثبّت نصاً ليبقى هنا.</string>
+    <string name="clip_empty_section">هذا القسم فارغ. استخدم حفظ على نص لإضافته.</string>
+    <string name="clip_off">سجل الحافظة متوقف. فعّله من التطبيق ليحفظ ما تنسخه.</string>
+    <string name="clip_need_lock">فعّل قفل الشاشة أو البصمة في هاتفك أولاً، ثم اقفل القسم.</string>
+    <string name="clip_unlock_title">فتح النصوص المحفوظة</string>
+    <string name="clip_unlock_subtitle">حافظة كيبورد الفضاء</string>
+    <string name="clip_unlock_failed">تعذّر الفتح. فعّل قفل الشاشة أو البصمة في هاتفك أولاً.</string>
+</resources>

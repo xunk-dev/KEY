@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cat_featured">Featured</string>
+    <string name="cat_currency">Currency</string>
+    <string name="cat_math">Math</string>
+    <string name="cat_arrows">Arrows</string>
+    <string name="cat_stars">Stars</string>
+    <string name="cat_hearts">Hearts</string>
+    <string name="cat_shapes">Shapes</string>
+    <string name="cat_marks">Marks</string>
+    <string name="cat_signs">Signs</string>
+    <string name="cat_punctuation">Punctuation</string>
+    <string name="cat_brackets">Brackets</string>
+    <string name="cat_frames">Frames</string>
+    <string name="cat_greek">Greek</string>
+    <string name="cat_circled">Circled</string>
+    <string name="cat_numerals">Numbers</string>
+    <string name="cat_arabic">Arabic</string>
+    <string name="cat_games">Games</string>
+    <string name="cat_music">Music</string>
+    <string name="cat_misc">Misc</string>
+    <string name="cat_ornaments">Ornaments</string>
+    <string name="cat_technical">Technical</string>
+    <string name="face_classic">Classic</string>
+    <string name="face_happy">Happy</string>
+    <string name="face_laugh">Laugh</string>
+    <string name="face_love">Love</string>
+    <string name="face_shy">Shy</string>
+    <string name="face_sad">Sad</string>
+    <string name="face_angry">Angry</string>
+    <string name="face_surprised">Surprised</string>
+    <string name="face_sleepy">Sleepy</string>
+    <string name="face_cool">Cool</string>
+    <string name="face_evil">Evil</string>
+    <string name="face_confused">Confused</string>
+    <string name="face_animals">Animals</string>
+    <string name="face_actions">Actions</string>
+    <string name="tab_symbols">Symbols</string>
+    <string name="tab_faces">Faces</string>
+    <string name="panel_back">ABC</string>
+    <string name="panel_search">Search</string>
+    <string name="panel_delete">Delete</string>
+    <string name="panel_close_search">Close search</string>
+    <string name="panel_search_hint">Search by name or code</string>
+    <string name="panel_search_start">Type with the keyboard below</string>
+    <string name="panel_empty">Nothing found</string>
+</resources>

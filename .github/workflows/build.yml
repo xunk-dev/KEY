@@ -1,0 +1,62 @@
+name: Build
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install and test the translate function
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: ./.github/actions/setup-build
+      - uses: ./.github/actions/generate-data
+      - name: Fetch emoji data and font
+        run: |
+          python3 -m unittest discover -s tools/data/emoji -p "test_*.py"
+          python3 tools/data/emoji/fetch_emoji.py feature-emoji/src/main/assets/emoji
+          python3 scripts/check-emoji-data.py
+      - name: Check lines, comments, binaries and functions
+        run: |
+          bash scripts/check-lines.sh
+          bash scripts/check-comments.sh
+          bash scripts/check-binaries.sh
+          bash scripts/check-function-lines.sh
+      - name: Check contrast, fonts and permissions
+        run: |
+          python3 scripts/check-contrast.py
+          python3 scripts/check-themes.py
+          python3 scripts/check-layouts.py
+          python3 scripts/check-strings.py
+          bash scripts/check-fonts.sh
+          python3 scripts/check-manifest-permissions.py
+      - name: Merge manifests
+        run: gradle :app:processDebugMainManifest :app:processReleaseMainManifest --no-daemon
+      - name: Check merged manifest
+        run: bash scripts/check-merged-manifest.sh
+      - name: Lint
+        run: gradle :app:lintDebug --no-daemon
+      - name: Unit tests
+        run: gradle :core:testDebugUnitTest :feature-symbols:testDebugUnitTest :feature-emoji:testDebugUnitTest :feature-decorate:testDebugUnitTest :feature-clipboard:testDebugUnitTest :feature-translate:testDebugUnitTest :feature-autofix:testDebugUnitTest :feature-images:testDebugUnitTest :ime:testDebugUnitTest :app:testDebugUnitTest --no-daemon
+      - name: Assemble debug
+        run: gradle :app:assembleDebug --no-daemon
+      - name: Check 16KB APK alignment
+        run: bash scripts/check-alignment.sh app/build/outputs/apk/debug/app-debug.apk
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: apk-debug
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error

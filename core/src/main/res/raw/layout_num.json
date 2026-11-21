@@ -1,0 +1,35 @@
+{
+  "id": "num",
+  "rows": [
+    [
+      {"label": "1", "hold": ["١"]},
+      {"label": "2", "hold": ["٢"]},
+      {"label": "3", "hold": ["٣"]},
+      {"label": "4", "hold": ["٤"]},
+      {"label": "5", "hold": ["٥"]},
+      {"label": "6", "hold": ["٦"]},
+      {"label": "7", "hold": ["٧"]},
+      {"label": "8", "hold": ["٨"]},
+      {"label": "9", "hold": ["٩"]},
+      {"label": "0", "hold": ["٠"]}
+    ],
+    ["@", "#", "$", "%", "&", "-", "+", "(", ")", "/"],
+    [
+      {"label": "*", "weight": 1.2},
+      {"label": "\"", "weight": 1.2},
+      {"label": "'", "weight": 1.2},
+      {"label": ":", "weight": 1.2},
+      {"label": ";", "weight": 1.2, "hold": ["؛"]},
+      {"label": "!", "weight": 1.2},
+      {"label": "?", "weight": 1.2, "hold": ["؟"]},
+      {"id": "delete", "action": "DELETE", "label": "⌫", "weight": 1.6}
+    ],
+    [
+      {"id": "abc", "action": "NUMBERS", "label": "ABC", "weight": 1.5},
+      {"label": ",", "hold": ["،"]},
+      {"id": "space", "action": "SPACE", "weight": 4.5},
+      {"label": ".", "hold": ["…"]},
+      {"id": "enter", "action": "ENTER", "label": "⏎", "weight": 2.0}
+    ]
+  ]
+}

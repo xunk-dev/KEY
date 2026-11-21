@@ -1,0 +1,10 @@
+{
+  "functions": [
+    {
+      "source": ".",
+      "codebase": "translate",
+      "ignore": ["node_modules", "test", ".git", "*.log"]
+    }
+  ],
+  "firestore": { "rules": "firestore.rules" }
+}
