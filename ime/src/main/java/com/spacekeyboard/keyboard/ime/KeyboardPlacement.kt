@@ -21,7 +21,6 @@ internal fun computePlacement(
     val input = GeometryInput(
         width, height, prefs.gapDp() * density, mode, prefs.oneHandPercent, prefs.splitGapPercent,
         bottomInset = if (editing) 0f else prefs.bottomSafePx(density),
-        // The numbers page is a grid: its bottom row must stay in line with the columns above it.
         edgeInset = if (editing || spec.id == LayoutCatalog.numbers.id) 0f else Limits.EDGE_SAFE_DP * density,
         widthPercent = if (editing) Limits.WIDTH_MAX else prefs.widthPercent,
     )

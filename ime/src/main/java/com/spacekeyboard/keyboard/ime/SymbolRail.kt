@@ -112,12 +112,10 @@ internal class SymbolRail(private val view: View) {
         val pitch = step()
         if (pitch <= 0f) return
         if (!scrolling) {
-            // A tap that stopped a running settle must not leave the rows cut in the middle.
             snap(pitch)
             return
         }
         scrolling = false
-        // A finger that rested before lifting must not fling.
         if (SystemClock.uptimeMillis() - lastTime > REST_MS) velocity = 0f
         val projected = offset + velocity * FLING_SECONDS
         val target = ((projected / pitch).roundToInt() * pitch).coerceIn(0f, maxOffset())

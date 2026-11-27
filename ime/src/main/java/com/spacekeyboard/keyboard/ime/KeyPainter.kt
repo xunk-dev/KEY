@@ -15,7 +15,6 @@ import com.spacekeyboard.keyboard.core.layout.Placement
 import com.spacekeyboard.keyboard.core.theme.ColorMath
 import com.spacekeyboard.keyboard.core.theme.KeyStyle
 import com.spacekeyboard.keyboard.core.theme.ThemePalette
-import com.spacekeyboard.keyboard.designsystem.icons.SpaceIcon
 import com.spacekeyboard.keyboard.ime.layout.DragState
 import com.spacekeyboard.keyboard.ime.layout.LabelTypefaces
 import com.spacekeyboard.keyboard.ime.layout.LayoutSnapshot
@@ -43,10 +42,10 @@ internal class KeyPainter(context: Context) {
     }
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { textAlign = Paint.Align.CENTER }
     private var layout: LayoutSnapshot? = null
-    private val micAreas = ArrayList<RectF>()
+    private val space = SpaceLabelPainter(density, textPaint, effects, icons)
     private var pressedIds: Set<String> = emptySet()
 
-    fun micAt(x: Float, y: Float): Boolean = micAreas.any { it.contains(x, y) }
+    fun micAt(x: Float, y: Float): Boolean = space.micAt(x, y)
 
     fun draw(
         canvas: Canvas,
@@ -60,7 +59,7 @@ internal class KeyPainter(context: Context) {
     ) {
         look = keyStyle
         layout = snapshot
-        micAreas.clear()
+        space.reset()
         pressedIds = pressed.mapTo(HashSet()) { it.key.id }
         val prefs = snapshot.prefs
         textPaint.typeface = typefaces.resolve(prefs.label)
@@ -113,9 +112,6 @@ internal class KeyPainter(context: Context) {
     private fun roundEnter(key: KeySpec) = key.action == KeyAction.ENTER && look != KeyStyle.GLASS
 
     private fun squareKind(key: KeySpec) = key.action == KeyAction.OPEN_SYMBOLS || key.action == KeyAction.NUMBERS
-
-    // Symbols, 123 and a round Enter share one side, so they read as one family on every page and in every
-    // language. A key that spans two columns (ABC on the symbols page) is not a square: it fills its cell.
     private fun measureSquares(placement: Placement) {
         val rows = placement.keys.filter { it.slot.row >= 0 }
         val widths = rows.filter { it.key.action == KeyAction.COMMIT }.map { it.box.width }.sorted()
@@ -194,7 +190,7 @@ internal class KeyPainter(context: Context) {
             return
         }
         if (key.action == KeyAction.SPACE) {
-            drawSpaceContent(canvas, label, ink, accent, alpha, box.width)
+            space.draw(canvas, rect, label, ink, accent, alpha, box.width, baseSize)
             return
         }
         val padDigit = current?.activeId == LayoutCatalog.numbers.id && key.action == KeyAction.COMMIT && label.length == 1 && label[0].isDigit()
@@ -244,37 +240,6 @@ internal class KeyPainter(context: Context) {
         canvas.drawLine(rect.centerX(), rect.top + rect.height() * 0.28f, rect.centerX(), rect.bottom - rect.height() * 0.28f, borderPaint)
     }
 
-    private fun drawSpaceContent(canvas: Canvas, label: String, ink: Int, accent: Int, alpha: Float, keyWidth: Float) {
-        effects.ruler(canvas, rect, ink, alpha)
-        val size = baseSize * SPACE_LABEL_RATIO
-        val micSize = size * MIC_RATIO
-        val inset = MIC_INSET_DP * density
-        val color = ColorMath.withAlpha(ink, SPACE_LABEL_ALPHA * alpha)
-        val micFits = keyWidth >= micSize + 2f * inset
-        if (micFits) {
-            val centre = rect.left + inset + micSize / 2f
-            icons.drawIcon(canvas, SpaceIcon.VOICE, centre, rect.centerY(), micSize, color, accent)
-            val half = maxOf(micSize, MIC_TAP_DP * density) / 2f
-            micAreas += RectF(centre - half, rect.top, centre + half, rect.bottom)
-        }
-        val clear = if (micFits) inset + micSize + MIC_GAP_DP * density else 0f
-        val room = 2f * (keyWidth / 2f - clear)
-        if (room <= 0f || label.isEmpty()) return
-        var fitted = size
-        textPaint.textSize = fitted
-        val wide = textPaint.measureText(label)
-        if (wide > room) {
-            fitted *= room / wide
-            textPaint.textSize = fitted
-        }
-        if (fitted >= MIN_LABEL_DP * density) {
-            val baseline = -(textPaint.ascent() + textPaint.descent()) / 2f
-            textPaint.color = color
-            canvas.drawText(label, rect.centerX(), rect.centerY() + baseline, textPaint)
-        }
-        textPaint.textSize = baseSize
-    }
-
     private fun drawLabel(canvas: Canvas, label: String, ink: Int, alpha: Float, size: Float, keyWidth: Float, centerX: Float): Float {
         var fitted = size
         textPaint.textSize = fitted
@@ -299,14 +264,8 @@ internal class KeyPainter(context: Context) {
         const val WIDE_RATIO = 1.8f
         const val PAIR_DIVIDER_ALPHA = 0.18f
         const val FADED_ALPHA = 0.35f
-        const val SPACE_LABEL_RATIO = 0.62f
-        const val SPACE_LABEL_ALPHA = 0.85f
         const val HINT_MIN_DP = 30f
         const val FIT_RATIO = 0.8f
-        const val MIC_RATIO = 1.5f
-        const val MIC_GAP_DP = 6f
-        const val MIN_LABEL_DP = 7f
-        const val MIC_TAP_DP = 44f
         const val FUNCTION_RATIO = 0.7f
         const val RAIL_RATIO = 0.9f
         const val DIGIT_SCALE = 1.2f
@@ -314,6 +273,5 @@ internal class KeyPainter(context: Context) {
         const val THUMB_DP = 2.5f
         const val THUMB_INSET_DP = 6f
         const val THUMB_ALPHA = 0.35f
-        const val MIC_INSET_DP = 10f
     }
 }

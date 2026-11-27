@@ -179,7 +179,6 @@ class KeyboardView(
         touch.deferred = key.isNumberRowKey() && canSwapDigits()
         touch.glideable = glide.arms(key, layoutSnapshot.shown(touch.picked()))
         val holdsNewline = key.action == KeyAction.ENTER && layoutSnapshot.enterKind != EnterKind.ENTER
-        // A symbol of the rail is typed on release, so a drag that scrolls the rail never types it first.
         if (key.firesOnDown() && !touch.deferred && !touch.glideable && !holdsNewline && railItem == null) {
             touch.handled = true
             fire(touch)

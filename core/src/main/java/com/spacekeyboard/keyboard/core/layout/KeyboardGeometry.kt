@@ -18,9 +18,6 @@ object KeyboardGeometry {
         layout.rows.forEachIndexed { r, row ->
             val last = r == lastRow
             val band = Box(area.left, r * rowHeight, area.right, if (last) input.height else (r + 1) * rowHeight)
-            // The bottom row keeps clear of the curved screen edges by laying the whole row out inside the
-            // inset band. Before, the inset was cut from the first and last key only, so the first key
-            // (symbols) came out narrower than its neighbour (123) and the two square keys differed in size.
             val laid = if (last) band.copy(left = band.left + input.edgeInset, right = band.right - input.edgeInset) else band
             val cells = if (input.mode == PanelMode.SPLIT) splitRow(row, laid, input.splitGapPercent) else straightRow(row, laid)
             val first = cells.minOfOrNull { it.box.left } ?: 0f
@@ -30,7 +27,6 @@ object KeyboardGeometry {
                 var hit = cell.box
                 if (last) {
                     box = box.copy(bottom = box.bottom - input.bottomInset)
-                    // The touch area of the edge keys still reaches the screen edge.
                     hit = hit.copy(
                         left = if (cell.box.left <= first + EDGE) band.left else hit.left,
                         right = if (cell.box.right >= end - EDGE) band.right else hit.right,
