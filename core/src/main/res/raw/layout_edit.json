@@ -1,0 +1,32 @@
+{
+  "id": "edit",
+  "rows": [
+    [
+      {"id": "edit_all", "action": "SELECT_ALL", "label": "All", "weight": 3, "movable": false},
+      {"id": "edit_copy", "action": "COPY", "label": "Copy", "weight": 3, "movable": false},
+      {"id": "edit_cut", "action": "CUT", "label": "Cut", "weight": 3, "movable": false},
+      {"id": "edit_paste", "action": "PASTE", "label": "Paste", "weight": 3, "movable": false}
+    ],
+    [
+      {"id": "edit_home", "action": "LINE_START", "label": "", "weight": 2, "movable": false},
+      {"id": "edit_wleft", "action": "WORD_LEFT", "label": "", "weight": 2, "movable": false},
+      {"id": "edit_left", "action": "LEFT", "label": "", "weight": 2, "movable": false},
+      {"id": "edit_right", "action": "RIGHT", "label": "", "weight": 2, "movable": false},
+      {"id": "edit_wright", "action": "WORD_RIGHT", "label": "", "weight": 2, "movable": false},
+      {"id": "edit_end", "action": "LINE_END", "label": "", "weight": 2, "movable": false}
+    ],
+    [
+      {"id": "edit_select", "action": "SELECT_MODE", "label": "Select", "weight": 2.064, "movable": false},
+      {"id": "edit_undo", "action": "UNDO", "label": "", "weight": 2.064, "movable": false},
+      {"id": "edit_redo", "action": "REDO", "label": "", "weight": 2.064, "movable": false},
+      {"id": "edit_up", "action": "UP", "label": "", "weight": 2.064, "movable": false},
+      {"id": "edit_down", "action": "DOWN", "label": "", "weight": 2.064, "movable": false},
+      {"id": "delete", "action": "DELETE", "label": "⌫", "weight": 1.68, "movable": false}
+    ],
+    [
+      {"id": "edit_close", "action": "EDIT", "label": "ABC", "weight": 3.384, "movable": false},
+      {"id": "space", "action": "SPACE", "weight": 6.936},
+      {"id": "enter", "action": "ENTER", "label": "⏎", "weight": 1.68, "movable": false}
+    ]
+  ]
+}

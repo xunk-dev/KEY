@@ -1,0 +1,49 @@
+{
+  "id": "en",
+  "rows": [
+    [
+      {"label": "q", "hold": ["1"]},
+      {"label": "w", "hold": ["2"]},
+      {"label": "e", "hold": ["3", "é", "è", "ê", "ë"]},
+      {"label": "r", "hold": ["4"]},
+      {"label": "t", "hold": ["5"]},
+      {"label": "y", "hold": ["6"]},
+      {"label": "u", "hold": ["7", "ù", "ú", "û", "ü"]},
+      {"label": "i", "hold": ["8", "ì", "í", "î", "ï"]},
+      {"label": "o", "hold": ["9", "ò", "ó", "ô", "ö", "õ"]},
+      {"label": "p", "hold": ["0"]}
+    ],
+    [
+      {"id": "gap_left", "action": "SPACER", "weight": 0.5},
+      {"label": "a", "hold": ["à", "á", "â", "ä", "ã", "å"]},
+      {"label": "s", "hold": ["ß"]},
+      "d",
+      "f",
+      "g",
+      "h",
+      "j",
+      "k",
+      "l",
+      {"id": "gap_right", "action": "SPACER", "weight": 0.5}
+    ],
+    [
+      {"id": "shift", "action": "SHIFT", "label": "⇧", "weight": 1.4, "movable": false},
+      {"label": "z", "weight": 1.0286},
+      {"label": "x", "weight": 1.0286},
+      {"label": "c", "hold": ["ç"], "weight": 1.0286},
+      {"label": "v", "weight": 1.0286},
+      {"label": "b", "weight": 1.0286},
+      {"label": "n", "hold": ["ñ"], "weight": 1.0286},
+      {"label": "m", "weight": 1.0286},
+      {"id": "delete", "action": "DELETE", "label": "⌫", "weight": 1.4}
+    ],
+    [
+      {"id": "sym_open", "action": "OPEN_SYMBOLS", "label": "Ω", "weight": 1.35},
+      {"id": "num", "action": "NUMBERS", "label": "123", "weight": 1.35},
+      {"label": ",", "hold": ["'", "@", "_", "-", "/"], "weight": 0.82},
+      {"id": "space", "action": "SPACE", "weight": 4.0514},
+      {"label": ".", "hold": ["?", "!", "…", ":", ";"], "weight": 1.0286},
+      {"id": "enter", "action": "ENTER", "label": "⏎", "weight": 1.4}
+    ]
+  ]
+}

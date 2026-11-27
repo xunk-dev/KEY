@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="decor_keys">Keyboard</string>
+    <string name="decor_language">Language</string>
+    <string name="decor_favorites">Favorites</string>
+    <string name="decor_type_mode">Type in this style</string>
+    <string name="decor_cat_all">All</string>
+    <string name="decor_cat_fonts">Fonts</string>
+    <string name="decor_cat_frames">Frames</string>
+    <string name="decor_cat_marks">Marks</string>
+    <string name="decor_cat_stretch">Stretch</string>
+    <string name="decor_empty_favorites">Press and hold a style to add it to your favorites.</string>
+    <string name="decor_apply_desc">Apply a decorative style to: %1$s</string>
+    <string name="decor_favorite_desc">Toggle favorite</string>
+    <string name="decor_screen_reader_warning">Decorated text may be read poorly by screen readers.</string>
+    <string name="decor_mode_apply">Apply to text</string>
+    <string name="decor_active_label">Style on</string>
+    <string name="decor_stop">Stop</string>
+</resources>

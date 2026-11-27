@@ -1,0 +1,279 @@
+{
+  "id": "sym",
+  "rows": [
+    [
+      {
+        "label": "1",
+        "hold": [
+          "١"
+        ]
+      },
+      {
+        "label": "2",
+        "hold": [
+          "٢"
+        ]
+      },
+      {
+        "label": "3",
+        "hold": [
+          "٣"
+        ]
+      },
+      {
+        "label": "4",
+        "hold": [
+          "٤"
+        ]
+      },
+      {
+        "label": "5",
+        "hold": [
+          "٥"
+        ]
+      },
+      {
+        "label": "6",
+        "hold": [
+          "٦"
+        ]
+      },
+      {
+        "label": "7",
+        "hold": [
+          "٧"
+        ]
+      },
+      {
+        "label": "8",
+        "hold": [
+          "٨"
+        ]
+      },
+      {
+        "label": "9",
+        "hold": [
+          "٩"
+        ]
+      },
+      {
+        "label": "0",
+        "hold": [
+          "٠"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "@",
+        "hold": [
+          "©",
+          "®",
+          "™"
+        ]
+      },
+      {
+        "label": "#",
+        "hold": [
+          "№"
+        ]
+      },
+      {
+        "label": "$",
+        "hold": [
+          "£",
+          "€",
+          "¥",
+          "ج.م"
+        ]
+      },
+      {
+        "label": "%",
+        "hold": [
+          "‰",
+          "°"
+        ]
+      },
+      {
+        "label": "&",
+        "hold": [
+          "§",
+          "¶"
+        ]
+      },
+      {
+        "label": "-",
+        "hold": [
+          "_",
+          "–",
+          "—"
+        ]
+      },
+      {
+        "label": "+",
+        "hold": [
+          "±"
+        ]
+      },
+      {
+        "label": "(",
+        "hold": [
+          "«"
+        ]
+      },
+      {
+        "label": ")",
+        "hold": [
+          "»"
+        ]
+      },
+      {
+        "label": "/",
+        "hold": [
+          "\\",
+          "|",
+          "÷"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "="
+      },
+      {
+        "label": "*",
+        "hold": [
+          "×",
+          "•"
+        ]
+      },
+      {
+        "label": "\""
+      },
+      {
+        "label": "'",
+        "hold": [
+          "`",
+          "´"
+        ]
+      },
+      {
+        "label": ":"
+      },
+      {
+        "label": ";",
+        "hold": [
+          "؛"
+        ]
+      },
+      {
+        "label": "!",
+        "hold": [
+          "¡"
+        ]
+      },
+      {
+        "label": "?",
+        "hold": [
+          "؟",
+          "¿"
+        ]
+      },
+      {
+        "label": "^",
+        "hold": [
+          "°"
+        ]
+      },
+      {
+        "label": "√",
+        "hold": [
+          "π",
+          "Δ",
+          "✓"
+        ]
+      }
+    ],
+    [
+      {
+        "id": "sym_back",
+        "action": "SYMBOLS",
+        "label": "123",
+        "weight": 1.4
+      },
+      {
+        "label": "~",
+        "hold": [
+          "`",
+          "|"
+        ],
+        "weight": 1.0286
+      },
+      {
+        "label": "[",
+        "weight": 1.0286
+      },
+      {
+        "label": "]",
+        "weight": 1.0286
+      },
+      {
+        "label": "{",
+        "weight": 1.0286
+      },
+      {
+        "label": "}",
+        "weight": 1.0286
+      },
+      {
+        "label": "<",
+        "weight": 1.0286
+      },
+      {
+        "label": ">",
+        "weight": 1.0286
+      },
+      {
+        "id": "delete",
+        "action": "DELETE",
+        "label": "⌫",
+        "weight": 1.4
+      }
+    ],
+    [
+      {
+        "id": "abc",
+        "action": "NUMBERS",
+        "label": "ABC",
+        "weight": 2.0
+      },
+      {
+        "label": ",",
+        "hold": [
+          "،"
+        ],
+        "weight": 0.82,
+        "id": "sym_comma"
+      },
+      {
+        "id": "space",
+        "action": "SPACE",
+        "weight": 4.7514
+      },
+      {
+        "label": ".",
+        "hold": [
+          "…"
+        ],
+        "weight": 1.0286,
+        "id": "sym_dot"
+      },
+      {
+        "id": "enter",
+        "action": "ENTER",
+        "label": "⏎",
+        "weight": 1.4
+      }
+    ]
+  ]
+}

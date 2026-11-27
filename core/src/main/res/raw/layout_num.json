@@ -1,0 +1,149 @@
+{
+  "id": "num",
+  "rows": [
+    [
+      {
+        "id": "rail_0",
+        "action": "RAIL",
+        "label": "",
+        "weight": 1.4,
+        "movable": false
+      },
+      {
+        "label": "1",
+        "weight": 2.4,
+        "hold": [
+          "١"
+        ]
+      },
+      {
+        "label": "2",
+        "weight": 2.4,
+        "hold": [
+          "٢"
+        ]
+      },
+      {
+        "label": "3",
+        "weight": 2.4,
+        "hold": [
+          "٣"
+        ]
+      },
+      {
+        "id": "delete",
+        "action": "DELETE",
+        "label": "⌫",
+        "weight": 1.4
+      }
+    ],
+    [
+      {
+        "id": "rail_1",
+        "action": "RAIL",
+        "label": "",
+        "weight": 1.4,
+        "movable": false
+      },
+      {
+        "label": "4",
+        "weight": 2.4,
+        "hold": [
+          "٤"
+        ]
+      },
+      {
+        "label": "5",
+        "weight": 2.4,
+        "hold": [
+          "٥"
+        ]
+      },
+      {
+        "label": "6",
+        "weight": 2.4,
+        "hold": [
+          "٦"
+        ]
+      },
+      {
+        "label": ".",
+        "hold": [
+          "…"
+        ],
+        "id": "num_dot",
+        "weight": 1.4
+      }
+    ],
+    [
+      {
+        "id": "rail_2",
+        "action": "RAIL",
+        "label": "",
+        "weight": 1.4,
+        "movable": false
+      },
+      {
+        "label": "7",
+        "weight": 2.4,
+        "hold": [
+          "٧"
+        ]
+      },
+      {
+        "label": "8",
+        "weight": 2.4,
+        "hold": [
+          "٨"
+        ]
+      },
+      {
+        "label": "9",
+        "weight": 2.4,
+        "hold": [
+          "٩"
+        ]
+      },
+      {
+        "label": ",",
+        "hold": [
+          "،"
+        ],
+        "id": "num_comma",
+        "weight": 1.4
+      }
+    ],
+    [
+      {
+        "id": "sym",
+        "action": "SYMBOLS",
+        "label": "#=",
+        "weight": 1.4
+      },
+      {
+        "id": "abc",
+        "action": "NUMBERS",
+        "label": "ABC",
+        "weight": 2.4
+      },
+      {
+        "label": "0",
+        "weight": 2.4,
+        "hold": [
+          "٠"
+        ]
+      },
+      {
+        "id": "space",
+        "action": "SPACE",
+        "weight": 2.4
+      },
+      {
+        "id": "enter",
+        "action": "ENTER",
+        "label": "⏎",
+        "weight": 1.4
+      }
+    ]
+  ]
+}

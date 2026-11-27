@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="decor_keys">لوحة المفاتيح</string>
+    <string name="decor_language">اللغة</string>
+    <string name="decor_favorites">المفضلة</string>
+    <string name="decor_type_mode">الكتابة بهذا النمط</string>
+    <string name="decor_cat_all">الكل</string>
+    <string name="decor_cat_fonts">خطوط</string>
+    <string name="decor_cat_frames">أطر</string>
+    <string name="decor_cat_marks">تشكيل</string>
+    <string name="decor_cat_stretch">مدّ الحروف</string>
+    <string name="decor_empty_favorites">اضغط مطولاً على نمط لإضافته إلى المفضلة.</string>
+    <string name="decor_apply_desc">تطبيق نمط زخرفة على: %1$s</string>
+    <string name="decor_favorite_desc">تبديل المفضلة</string>
+    <string name="decor_screen_reader_warning">قد تقرأ قارئات الشاشة النص المزخرف بشكل سيئ.</string>
+    <string name="decor_mode_apply">تطبيق على النص</string>
+    <string name="decor_active_label">النمط الفعّال</string>
+    <string name="decor_stop">إيقاف</string>
+</resources>

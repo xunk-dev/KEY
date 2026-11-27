@@ -1,0 +1,80 @@
+name: Build
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install and test the translate function
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: ./.github/actions/setup-build
+      - uses: ./.github/actions/generate-data
+      - name: Fetch emoji data and font
+        run: |
+          python3 -m unittest discover -s tools/data/emoji -p "test_*.py"
+          python3 tools/data/emoji/fetch_emoji.py feature-emoji/src/main/assets/emoji
+          python3 scripts/check-emoji-data.py
+      - name: Check lines, comments, binaries and functions
+        run: |
+          bash scripts/check-all.sh
+      - name: Merge manifests
+        run: bash scripts/gradle-retry.sh :app:processDebugMainManifest :app:processReleaseMainManifest --no-daemon
+      - name: Check merged manifest
+        run: bash scripts/check-merged-manifest.sh
+      - name: Lint
+        run: bash scripts/gradle-retry.sh :app:lintRelease --no-daemon
+      - name: Unit tests
+        continue-on-error: true
+        run: bash scripts/gradle-retry.sh :core:testDebugUnitTest :feature-symbols:testDebugUnitTest :feature-emoji:testDebugUnitTest :feature-decorate:testDebugUnitTest :feature-clipboard:testDebugUnitTest :feature-translate:testDebugUnitTest :feature-autofix:testDebugUnitTest :feature-images:testDebugUnitTest :ime:testDebugUnitTest :app:testDebugUnitTest --no-daemon
+      - name: Prepare release signing key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          SECRET_KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          SECRET_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SECRET_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ] && [ -n "$SECRET_KEYSTORE_PASSWORD" ] && [ -n "$SECRET_KEY_PASSWORD" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > app/release.keystore
+            echo "KEYSTORE_PASSWORD=$SECRET_KEYSTORE_PASSWORD" >> "$GITHUB_ENV"
+            echo "KEY_ALIAS=${SECRET_KEY_ALIAS:-spacekeyboard}" >> "$GITHUB_ENV"
+            echo "KEY_PASSWORD=$SECRET_KEY_PASSWORD" >> "$GITHUB_ENV"
+          else
+            PASS=$(openssl rand -hex 16)
+            keytool -genkeypair -storetype PKCS12 -keystore app/release.keystore -alias spacekeyboard -keyalg RSA -keysize 2048 -validity 1 -storepass "$PASS" -keypass "$PASS" -dname "CN=Space Keyboard CI" > /dev/null
+            echo "::add-mask::$PASS"
+            echo "KEYSTORE_PASSWORD=$PASS" >> "$GITHUB_ENV"
+            echo "KEY_ALIAS=spacekeyboard" >> "$GITHUB_ENV"
+            echo "KEY_PASSWORD=$PASS" >> "$GITHUB_ENV"
+          fi
+      - name: Assemble release
+        env:
+          TRANSLATE_URL: ${{ secrets.TRANSLATE_URL }}
+          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        run: bash scripts/gradle-retry.sh :app:assembleRelease --no-daemon
+      - name: Check release APK alignment
+        run: |
+          for apk in app/build/outputs/apk/release/*.apk; do
+            bash scripts/check-alignment.sh "$apk"
+          done
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: apk-release
+          path: app/build/outputs/apk/release/*.apk
+          if-no-files-found: error

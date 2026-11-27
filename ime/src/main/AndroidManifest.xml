@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <application>
+        <service
+            android:name=".SpaceInputService"
+            android:exported="true"
+            android:label="@string/ime_label"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+        <service
+            android:name=".OtpNotificationService"
+            android:exported="true"
+            android:label="@string/otp_service_label"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".VoiceActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ClipEditActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize|uiMode|layoutDirection|locale|fontScale|keyboard"
+            android:exported="false"
+            android:label="@string/clip_edit_label"
+            android:taskAffinity=""
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".MacroRenameActivity"
+            android:exported="false"
+            android:label="@string/macro_rename"
+            android:taskAffinity=""
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+    </application>
+</manifest>

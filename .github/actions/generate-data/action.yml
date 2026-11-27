@@ -1,0 +1,11 @@
+name: Generate data
+description: Download Unicode and CLDR sources and generate the symbol and face data files
+runs:
+  using: composite
+  steps:
+    - name: Test, generate and verify the data
+      shell: bash
+      run: |
+        python3 -m unittest discover -s tools/data/tests
+        python3 tools/data/build_data.py
+        python3 tools/data/verify_data.py

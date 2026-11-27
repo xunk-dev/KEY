@@ -1,0 +1,20 @@
+# Signing material and secrets: never commit
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+*.enc
+local.properties
+secrets.properties
+# Build outputs
+build/
+.gradle/
+.kotlin/
+.idea/
+*.apk
+*.aab
+.cxx/
+feature-symbols/src/main/assets/
+feature-emoji/src/main/assets/emoji/
+__pycache__/

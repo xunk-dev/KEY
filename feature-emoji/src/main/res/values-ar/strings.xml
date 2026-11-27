@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emoji_set_noto">إيموجي نوتو الملوّن</string>
+    <string name="emoji_set_system">إيموجي الهاتف</string>
+    <string name="emoji_keys">أبج</string>
+    <string name="emoji_search">بحث عن إيموجي</string>
+    <string name="emoji_search_close">إغلاق البحث</string>
+    <string name="emoji_search_placeholder">ابحث عن إيموجي…</string>
+    <string name="emoji_search_none">لا يوجد إيموجي مطابق</string>
+    <string name="emoji_search_loading">جارٍ تجهيز البحث…</string>
+    <string name="emoji_delete">حذف</string>
+    <string name="emoji_tone">لون البشرة</string>
+    <string name="emoji_loading">جارٍ تحميل الإيموجي…</string>
+    <string name="emoji_failed">تعذّر تحميل الإيموجي.</string>
+    <string name="emoji_recents">الأخيرة</string>
+    <string name="emoji_recents_empty">الإيموجي الذي تستخدمه يظهر هنا.</string>
+    <string name="emoji_clear">مسح</string>
+    <string name="emoji_clear_confirm">مسح كل الإيموجي الأخيرة؟</string>
+    <string name="emoji_clear_yes">مسح الكل</string>
+    <string name="emoji_remove">حذف من الأخيرة</string>
+    <string name="emoji_done">تم</string>
+    <string name="emoji_clear_no">إبقاء</string>
+    <string name="emoji_group_smileys">الوجوه والتعبيرات</string>
+    <string name="emoji_group_body">الأيدي وأعضاء الجسم</string>
+    <string name="emoji_group_people">الأشخاص</string>
+    <string name="emoji_group_animals">الحيوانات والطبيعة</string>
+    <string name="emoji_group_food">الطعام والشراب</string>
+    <string name="emoji_group_travel">السفر والأماكن</string>
+    <string name="emoji_group_activities">الأنشطة</string>
+    <string name="emoji_group_objects">الأشياء</string>
+    <string name="emoji_group_symbols">علامات</string>
+    <string name="emoji_group_flags">الأعلام</string>
+    <string name="emoji_tone_none">الافتراضي</string>
+    <string name="emoji_tone_light">فاتح</string>
+    <string name="emoji_tone_medium_light">فاتح متوسط</string>
+    <string name="emoji_tone_medium">متوسط</string>
+    <string name="emoji_tone_medium_dark">داكن متوسط</string>
+    <string name="emoji_tone_dark">داكن</string>
+    <string name="hub_tab_emoji">إيموجي</string>
+    <string name="hub_tab_symbols">رموز</string>
+    <string name="hub_tab_faces">وجوه</string>
+    <string name="hub_tab_art">رسوم</string>
+    <string name="hub_tab_images">صور</string>
+</resources>

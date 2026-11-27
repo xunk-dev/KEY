@@ -1,0 +1,54 @@
+{
+  "id": "fa",
+  "rows": [
+    [
+      {"label": "ض", "hold": ["1", "۱"]},
+      {"label": "ص", "hold": ["2", "۲"]},
+      {"label": "ث", "hold": ["3", "۳"]},
+      {"label": "ق", "hold": ["4", "۴"]},
+      {"label": "ف", "hold": ["5", "۵"]},
+      {"label": "غ", "hold": ["6", "۶"]},
+      {"label": "ع", "hold": ["7", "۷"]},
+      {"label": "ه", "hold": ["8", "۸"]},
+      {"label": "خ", "hold": ["9", "۹"]},
+      {"label": "ح", "hold": ["0", "۰"]},
+      "ج",
+      "چ"
+    ],
+    [
+      "ش",
+      "س",
+      "ی",
+      "ب",
+      "ل",
+      {"label": "ا", "hold": ["آ", "أ", "إ", "ٱ"]},
+      "ت",
+      "ن",
+      "م",
+      "ک",
+      "گ",
+      "ژ"
+    ],
+    [
+      {"label": "ظ", "weight": 1.1467},
+      {"label": "ط", "weight": 1.1467},
+      {"label": "ز", "weight": 1.1467},
+      {"label": "ر", "weight": 1.1467},
+      {"label": "ذ", "weight": 1.1467},
+      {"label": "د", "weight": 1.1467},
+      {"label": "پ", "weight": 1.1467},
+      {"label": "و", "weight": 1.1467},
+      {"label": "ئ", "hold": ["ء", "ؤ", "أ"], "weight": 1.1467},
+      {"id": "delete", "action": "DELETE", "label": "⌫", "weight": 1.68}
+    ],
+    [
+      {"id": "sym_open", "action": "OPEN_SYMBOLS", "label": "Ω", "weight": 1.62},
+      {"id": "num", "action": "NUMBERS", "label": "123", "weight": 1.62},
+      {"label": "،", "hold": ["؟", "؛", "!", ":", "-", "/"], "weight": 0.984},
+      {"label": "ـ‌ـ", "weight": 0.984},
+      {"id": "space", "action": "SPACE", "weight": 3.9653},
+      {"label": ".", "hold": ["؟", "!", "…", ":", "؛"], "weight": 1.1467},
+      {"id": "enter", "action": "ENTER", "label": "⏎", "weight": 1.68}
+    ]
+  ]
+}

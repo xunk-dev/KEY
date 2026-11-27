@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="images_keys">أبج</string>
+    <string name="images_title">الصور</string>
+    <string name="images_add">إضافة</string>
+    <string name="images_empty">لا توجد صور بعد. اضغط إضافة لاختيار صور من المعرض.</string>
+    <string name="images_empty_filtered">لا شيء في هذا التبويب بعد. تظهر هنا صور GIF والصور الشفافة وملصقات WebP المتحركة.</string>
+    <string name="images_filter_all">الكل</string>
+    <string name="images_filter_gif">GIF</string>
+    <string name="images_filter_stickers">ملصقات</string>
+    <string name="images_copied">هذا التطبيق لا يستقبل الصور من الكيبورد. تم نسخ الصورة: الصقها في الرسالة.</string>
+    <string name="images_added">تمت إضافة %1$d</string>
+    <string name="images_added_some_failed">تمت إضافة %1$d وتعذرت إضافة %2$d</string>
+    <string name="images_failed">تعذرت إضافة الصور</string>
+    <string name="images_full">وصلت إلى الحد الأقصى للصور (%1$d). احذف بعضها لتضيف المزيد.</string>
+    <string name="images_label">صورة محفوظة</string>
+    <string name="images_label_gif">صورة GIF محفوظة</string>
+    <string name="images_label_sticker">ملصق محفوظ</string>
+    <string name="images_item_desc">%1$s، %2$d من %3$d</string>
+</resources>

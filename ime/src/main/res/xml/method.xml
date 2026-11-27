@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<input-method xmlns:android="http://schemas.android.com/apk/res/android"
+    android:supportsInlineSuggestions="true"
+    android:supportsSwitchingToNextInputMethod="true"
+    android:settingsActivity="com.spacekeyboard.keyboard.MainActivity">
+    <subtype
+        android:imeSubtypeLocale="ar"
+        android:imeSubtypeMode="keyboard"
+        android:imeSubtypeExtraValue="layout=ar"
+        android:label="@string/subtype_ar" />
+    <subtype
+        android:imeSubtypeLocale="en_US"
+        android:isAsciiCapable="true"
+        android:imeSubtypeMode="keyboard"
+        android:imeSubtypeExtraValue="layout=en"
+        android:label="@string/subtype_en" />
+    <subtype
+        android:imeSubtypeLocale="fa"
+        android:imeSubtypeMode="keyboard"
+        android:imeSubtypeExtraValue="layout=fa"
+        android:label="@string/subtype_fa" />
+    <subtype
+        android:imeSubtypeLocale="zz"
+        android:isAsciiCapable="true"
+        android:imeSubtypeMode="keyboard"
+        android:imeSubtypeExtraValue="layout=az"
+        android:label="@string/subtype_az" />
+</input-method>
